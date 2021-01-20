@@ -1,5 +1,5 @@
 # DBT Training Container
-This repository contains build instructions to generate a container suitable to complete DBT training.
+This repository contains build instructions to generate a container suitable to complete DBT training.  **Due to intentionally reduced security, this container should not be used to hold any production data or PII of any sort.**
 
 ## Container Details
 
@@ -30,9 +30,27 @@ Docker Engine [link](https://docs.docker.com/engine/install/) must be installed.
 - Basic understanding of how to build and run Docker containers
 ## How to Build
 Create a working directory to hold your files with the following structure:
-
-From the command line, navigate to the directory you created. Run the following command to build the target docker container:
+```
++--[Your working directory's name]
+|  +--dbt_files
+```
+From the command line, navigate to the directory you created. Run the following command to build the target Docker container:
 
 `docker build  https://github.com/erobinson-aaalife/dbt_training.git#main -t dbt-training`
 
 ## How to Run
+From your working directory run the following command to start the Docker container:
+`docker run --name dbt-training -dp 5432:5432 -v [Your working directory's filepath]\dbt_files:/dbt_files dbt-training:latest`
+
+### Accessing the Postgres DB outside the Docker container
+The following parameters can be used to connect to the Postgres database instance from the query tool of your choice:
+| Parameter          | Value        |
+|-------------------|------------|
+| Address          | localhost or 127.0.0.1|
+|Port|5432|
+|username|postgres|
+|password|password<sup>1</sup>|
+
+Please note that this database is local, and has no ability to connect externally.
+
+<sup>1</sup> For any non-training exercise, this is a terrible security practice and should never be done.
