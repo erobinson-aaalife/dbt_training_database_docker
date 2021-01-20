@@ -1,4 +1,4 @@
-# dbt_training
+# DBT Training Container
 This repository contains build instructions to generate a container suitable to complete DBT training.
 
 ## Container Details
