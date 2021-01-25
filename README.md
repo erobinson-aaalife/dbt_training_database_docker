@@ -39,7 +39,7 @@ From the command line, navigate to the directory you created. Run the following 
 
 ## How to Run
 From your working directory run the following command to start the Docker container:
-`docker run --name dbt-training -dp 5432:5432 -v [Your working directory's filepath]\dbt_files:/dbt_files dbt-training:latest`
+`docker run --name dbt-training -dp 5432:5432 -e POSTGRES_PASSWORD=[your password here] dbt-training:latest`
 
 ### Accessing the Postgres DB outside the Docker container
 The following parameters can be used to connect to the Postgres database instance from the query tool of your choice:
@@ -48,11 +48,11 @@ The following parameters can be used to connect to the Postgres database instanc
 | Address          | localhost or 127.0.0.1|
 |Port|5432|
 |username|postgres|
-|password|password<sup>1</sup>|
+|password|the password you assigned to variable `POSTGRES_PASSWORD`<sup>1</sup>|
 
 Please note that this database is local, and has no ability to connect externally.
 
-<sup>1</sup> For any non-training exercise, this is a terrible security practice and should never be done.
+<sup>1</sup> If you don't specify a password, the password will be `password`.  For any non-training exercise, this is a terrible security practice and should never be done.
 ### Running DBT jobs inside the container
 Run the following command to open a shell session inside the Docker container:
 `docker exec -it dbt-training bash`
