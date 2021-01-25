@@ -53,8 +53,3 @@ The following parameters can be used to connect to the Postgres database instanc
 Please note that this database is local, and has no ability to connect externally.
 
 <sup>1</sup> If you don't specify a password, the password will be `password`.  For any non-training exercise, this is a terrible security practice and should never be done.
-### Running DBT jobs inside the container
-Run the following command to open a shell session inside the Docker container:
-`docker exec -it dbt-training bash`
-
-Within the container, you should be able to run DBT commands as if you were working from your local computer.
