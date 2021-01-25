@@ -13,7 +13,6 @@ The docker container includes the following:
 +--stripe
 |  +--payment (from stripe_payments.csv)
 ```
-- Python 3.7 with `dbt` package and dependencies installed.
 ## Prerequisites
 ### Software
 In order to build and run the container, your computer must have the following software installed:
