@@ -4,6 +4,8 @@
 
 CREATE SCHEMA IF NOT EXISTS jaffle_shop; 
 CREATE SCHEMA IF NOT EXISTS stripe;
+CREATE SCHEMA IF NOT EXISTS dbt_test;
+
 
 -- Load customers table
 CREATE TABLE IF NOT EXISTS jaffle_shop.customers
