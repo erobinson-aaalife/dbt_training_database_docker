@@ -5,7 +5,7 @@ jaffle_shop:
       type: postgres
       host: localhost
       user: postgres
-      pass: password
+      pass: <the password you assigned to POSTGRES_PASSWORD>
       port: 5432
       dbname: dbt_training
       schema: dbt_test
