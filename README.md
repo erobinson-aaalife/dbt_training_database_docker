@@ -35,7 +35,7 @@ Create a working directory to hold your files with the following structure:
 ```
 From the command line, navigate to the directory you created. Run the following command to build the target Docker container:
 
-`docker build  https://github.com/erobinson-aaalife/dbt_training.git#main -t dbt-training`
+`docker build  https://github.com/erobinson-aaalife/dbt_training_database_docker.git#main -t dbt-training`
 
 ## How to Run
 From your working directory run the following command to start the Docker container:
